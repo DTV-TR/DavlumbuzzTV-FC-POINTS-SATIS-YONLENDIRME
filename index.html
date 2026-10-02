@@ -27,7 +27,7 @@
             overflow-x: hidden;
         }
 
-        /* Arka Planda Hareket Eden Muz Logoları */
+        /* Arka Planda Hareket Eden Logolar */
         .bg-animations {
             position: fixed;
             top: 0;
@@ -45,10 +45,10 @@
                 opacity: 0;
             }
             20% {
-                opacity: 0.25;
+                opacity: 0.3;
             }
             80% {
-                opacity: 0.25;
+                opacity: 0.3;
             }
             100% {
                 transform: translateY(-10vh) rotate(360deg);
@@ -56,24 +56,23 @@
             }
         }
 
-        .floating-banana {
+        .floating-logo {
             position: absolute;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #00ff66;
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
             animation: floatUp 10s infinite linear;
         }
 
-        /* Farklı konumlarda ve hızlarda muzlar */
-        .floating-banana:nth-child(1) { left: 5%; animation-duration: 9s; animation-delay: 0s; }
-        .floating-banana:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 2s; width: 50px; height: 50px; }
-        .floating-banana:nth-child(3) { left: 40%; animation-duration: 8s; animation-delay: 4s; width: 70px; height: 70px; }
-        .floating-banana:nth-child(4) { left: 60%; animation-duration: 14s; animation-delay: 1s; }
-        .floating-banana:nth-child(5) { left: 75%; animation-duration: 10s; animation-delay: 3s; width: 55px; height: 55px; }
-        .floating-banana:nth-child(6) { left: 90%; animation-duration: 11s; animation-delay: 5s; }
+        .floating-logo:nth-child(1) { left: 5%; animation-duration: 9s; animation-delay: 0s; }
+        .floating-logo:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 2s; width: 50px; height: 50px; }
+        .floating-logo:nth-child(3) { left: 40%; animation-duration: 8s; animation-delay: 4s; width: 70px; height: 70px; }
+        .floating-logo:nth-child(4) { left: 60%; animation-duration: 14s; animation-delay: 1s; }
+        .floating-logo:nth-child(5) { left: 75%; animation-duration: 10s; animation-delay: 3s; width: 55px; height: 55px; }
+        .floating-logo:nth-child(6) { left: 90%; animation-duration: 11s; animation-delay: 5s; }
 
         header {
             text-align: center;
@@ -83,7 +82,6 @@
             max-width: 450px;
         }
 
-        /* RGB Neon Animasyonlu Yatay Çerçeve */
         @keyframes rgbGlow {
             0% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.5); }
             33% { border-color: #00ff66; box-shadow: 0 0 15px rgba(0, 255, 102, 0.8), inset 0 0 10px rgba(0, 255, 102, 0.5); }
@@ -111,7 +109,6 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
-        /* Geri Sayım Kutusu */
         .countdown-container {
             background: rgba(255, 65, 108, 0.15);
             border: 2px solid #ff416c;
@@ -251,7 +248,6 @@
             fill: white;
         }
 
-        /* Sosyal Medya Alanı */
         .social-container {
             display: flex;
             justify-content: center;
@@ -299,23 +295,21 @@
 </head>
 <body>
 
-    <!-- Arka Planda Gidip Gelen Muz Logoları -->
+    <!-- Arka Planda Gidip Gelen Logolar (GitHub'daki fotoğrafının adını logo.jpg yaparsan burası çalışır) -->
     <div class="bg-animations">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
-        <img src="logo.jpg" class="floating-banana" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
+        <img src="logo.jpg" class="floating-logo" alt="Logo">
     </div>
 
     <header>
-        <!-- RGB Neon Animasyonlu Çalışma Saatleri Şeridi -->
         <div class="hours-banner">
             <div class="hours-text">⏰ Satışlar Sadece 12:00 ve 19:00 Arası Yapılmaktadır ⏰</div>
         </div>
 
-        <!-- 48 Saatlik Geri Sayım Alanı -->
         <div class="countdown-container">
             <div class="countdown-title">⚡ Son Saatler ⚡</div>
             <div id="timer" class="countdown-timer">48:00:00</div>
@@ -334,20 +328,16 @@
             </div>
             <div class="note">Kaçırma! Kadronu Şahlandır 🚀</div>
             
-            <!-- WhatsApp Butonu -->
             <a href="https://wa.me/905379654092?text=Merhaba,%204200%E2%82%BA%20fiyat%C4%B1ndaki%2015.000%20FC%20Points%20paketini%20sat%C4%B1n%20almak%20istiyorum." class="whatsapp-btn" target="_blank">
                 <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Hemen Satın Al (WhatsApp)
             </a>
         </div>
 
-        <!-- Sosyal Medya İkonları -->
         <div class="social-container">
-            <!-- YouTube -->
             <a href="https://youtube.com/@davlumbuzztv?si=QlrscG2tWZK7k75-" class="social-icon" target="_blank" title="YouTube">
                 <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
-            <!-- TikTok -->
             <a href="https://www.tiktok.com/@davlumbuzztv?_r=1&_t=ZS-9AEDy46CNqX" class="social-icon" target="_blank" title="TikTok">
                 <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.5.18-1.92 1.12-3.72 2.5-5.02 1.55-1.47 3.71-2.22 5.83-2.02.07.38.15.75.22 1.13-.9-.23-1.84-.2-2.73.11-1.03.36-1.92 1.05-2.48 1.98-.79 1.29-.83 2.93-.11 4.27.69 1.28 1.98 2.15 3.44 2.29 1.34.13 2.72-.32 3.7-1.25.92-.88 1.44-2.11 1.46-3.37.03-3.92.01-7.84.02-11.76z"/></svg>
             </a>
@@ -358,12 +348,11 @@
         Davlumbuzz TV 🚀
     </footer>
 
-    <!-- Geri Sayım Mantığı -->
     <script>
         let countDownTime = localStorage.getItem("davlumbuzz_global_endtime");
         
         if (!countDownTime) {
-            countDownTime = new Date().getTime() + (48 * 60 * 60 * 1000); // 48 Saat
+            countDownTime = new Date().getTime() + (48 * 60 * 60 * 1000); 
             localStorage.setItem("davlumbuzz_global_endtime", countDownTime);
         }
 
