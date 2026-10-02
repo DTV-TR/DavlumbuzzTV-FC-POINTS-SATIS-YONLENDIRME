@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davlumbuzz TV - FC Points Özel Teklifleri</title>
+    <title>Davlumbuzz TV - FC Points Özel Teklifi</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -20,13 +20,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
             padding: 20px;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
-        /* Arka Plan Logo Efekti */
+        /* Arka Plan Yuvarlak Neon Logo */
         .bg-logo-container {
             position: fixed;
             top: 0;
@@ -48,7 +49,7 @@
             box-shadow: 0 0 50px rgba(0, 255, 102, 0.4), inset 0 0 30px rgba(0, 255, 102, 0.3);
             overflow: hidden;
             position: relative;
-            opacity: 0.25; /* Çok belirgin ama yazıları engellemeyecek seviyede */
+            opacity: 0.25;
         }
 
         .bg-logo-wrapper img {
@@ -90,7 +91,6 @@
             max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
             z-index: 1;
         }
 
@@ -99,16 +99,11 @@
             backdrop-filter: blur(8px);
             border: 2px solid #00ff66;
             border-radius: 16px;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
             box-shadow: 0 8px 25px rgba(0, 255, 102, 0.25);
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
         }
 
         .badge {
@@ -126,10 +121,10 @@
         }
 
         .points-title {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 900;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
@@ -137,21 +132,21 @@
             background: rgba(0, 255, 102, 0.12);
             border: 1px dashed #00ff66;
             border-radius: 10px;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
         }
 
         .price {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 900;
             color: #00ff66;
             text-shadow: 0 0 8px rgba(0,255,102,0.4);
         }
 
         .note {
-            font-size: 13px;
+            font-size: 14px;
             color: #b0c4de;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
@@ -163,16 +158,17 @@
             background-color: #25d366;
             color: white;
             text-decoration: none;
-            padding: 14px;
+            padding: 16px;
             border-radius: 10px;
             font-weight: 700;
             font-size: 16px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, transform 0.2s;
         }
 
         .whatsapp-btn:hover {
             background-color: #1ebe5d;
+            transform: translateY(-2px);
         }
 
         .whatsapp-btn svg {
@@ -182,7 +178,7 @@
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 25px;
             text-align: center;
             font-size: 14px;
             color: #00ff66;
@@ -198,7 +194,7 @@
     <!-- Arka Plandaki Yuvarlak Logolu Görsel -->
     <div class="bg-logo-container">
         <div class="bg-logo-wrapper">
-            <!-- Logonun GitHub'daki adını aşağıda src kısmına yazmalısın (örn: logo.jpg) -->
+            <!-- Logonuzun dosya adı (GitHub'a logo.jpg olarak yüklemelisiniz) -->
             <img src="logo.jpg" alt="Davlumbuzz TV Logo">
         </div>
     </div>
@@ -209,39 +205,23 @@
     </header>
 
     <div class="container">
-        
-        <!-- 1. Paket (15.000 FC Points) -->
         <div class="card">
-            <div class="badge">En Uygun</div>
+            <div class="badge">Bugüne Özel</div>
             <div class="points-title">15.000 FC Points</div>
             <div class="price-box">
                 <span class="price">4200₺</span>
             </div>
-            <div class="note">Bugüne Özel Fırsat!</div>
+            <div class="note">Kaçırma! Kadronu Şahlandır 🚀</div>
+            <!-- WhatsApp Yönlendirmesi (+90 537 965 40 92) -->
             <a href="https://wa.me/905379654092?text=Merhaba,%204200%E2%82%BA%20fiyat%C4%B1ndaki%2015.000%20FC%20Points%20paketini%20sat%C4%B1n%20almak%20istiyorum." class="whatsapp-btn" target="_blank">
                 <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Hemen Satın Al (WhatsApp)
             </a>
         </div>
-
-        <!-- 2. Paket (Örn: 7.500 FC Points) -->
-        <div class="card">
-            <div class="badge" style="background:#ffcc00;">Popüler</div>
-            <div class="points-title">7.500 FC Points</div>
-            <div class="price-box">
-                <span class="price">2200₺</span>
-            </div>
-            <div class="note">Kampanyayı Kaçırma!</div>
-            <a href="https://wa.me/905379654092?text=Merhaba,%202200%E2%82%BA%20fiyat%C4%B1ndaki%207.500%20FC%20Points%20paketini%20sat%C4%B1n%20almak%20istiyorum." class="whatsapp-btn" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Hemen Satın Al (WhatsApp)
-            </a>
-        </div>
-
     </div>
 
     <footer>
-        Kaçırma! Kadronu Şahlandır 🚀
+        Davlumbuzz TV 🚀
     </footer>
 
 </body>
