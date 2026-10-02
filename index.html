@@ -64,6 +64,33 @@
             z-index: 1;
         }
 
+        /* Geri Sayım Kutusu */
+        .countdown-container {
+            background: rgba(255, 65, 108, 0.15);
+            border: 2px solid #ff416c;
+            border-radius: 14px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(255, 65, 108, 0.3);
+            display: inline-block;
+        }
+
+        .countdown-title {
+            font-size: 12px;
+            font-weight: 900;
+            color: #ff416c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .countdown-timer {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
         .alert-banner {
             background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: white;
@@ -233,11 +260,17 @@
     </div>
 
     <header>
+        <!-- 48 Saatlik Geri Sayım Alanı -->
+        <div class="countdown-container">
+            <div class="countdown-title">⚡ Son Saatler ⚡</div>
+            <div id="timer" class="countdown-timer">48:00:00</div>
+        </div>
+        <br>
         <div class="alert-banner">🚨 Günün Özel Teklifi 🚨</div>
         <h1>En Avantajlı FC Puan Teklifi</h1>
     </header>
 
-    <div class="container">
+    <div class="container" id="main-content">
         <div class="card">
             <div class="badge">Bugüne Özel</div>
             <div class="points-title">15.000 FC Points</div>
@@ -269,6 +302,40 @@
     <footer>
         Davlumbuzz TV 🚀
     </footer>
+
+    <!-- Geri Sayım Mantığı -->
+    <script>
+        // Sürenin ne zaman biteceğini hesapla (İlk açılışta 48 saat ekler ve tarayıcıda saklar)
+        let countDownTime = localStorage.getItem("davlumbuzz_endtime");
+        
+        if (!countDownTime) {
+            countDownTime = new Date().getTime() + (48 * 60 * 60 * 1000); // 48 Saat
+            localStorage.setItem("davlumbuzz_endtime", countDownTime);
+        }
+
+        let x = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countDownTime - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "SÜRE BİTTİ";
+                document.getElementById("main-content").innerHTML = "<div class='card' style='color:#ff416c; font-weight:900; font-size:20px;'>Bu Teklif Sona Ermiştir!</div>";
+            } else {
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Saatlerin 48 saati aşabilmesi veya genel gösterimi için:
+                let totalHours = Math.floor(distance / (1000 * 60 * 60));
+
+                document.getElementById("timer").innerHTML = 
+                    String(totalHours).padStart(2, '0') + ":" + 
+                    String(minutes).padStart(2, '0') + ":" + 
+                    String(seconds).padStart(2, '0');
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
