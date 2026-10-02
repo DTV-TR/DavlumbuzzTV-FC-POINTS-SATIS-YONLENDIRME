@@ -24,7 +24,7 @@
             min-height: 100vh;
             padding: 20px;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         /* Arka Plan Yuvarlak Neon Logo */
@@ -62,6 +62,36 @@
             text-align: center;
             margin-bottom: 25px;
             z-index: 1;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* RGB Neon Animasyonlu Yatay Çerçeve */
+        @keyframes rgbGlow {
+            0% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.5); }
+            33% { border-color: #00ff66; box-shadow: 0 0 15px rgba(0, 255, 102, 0.8), inset 0 0 10px rgba(0, 255, 102, 0.5); }
+            66% { border-color: #0088ff; box-shadow: 0 0 15px rgba(0, 136, 255, 0.8), inset 0 0 10px rgba(0, 136, 255, 0.5); }
+            100% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.5); }
+        }
+
+        .hours-banner {
+            width: 100%;
+            background: rgba(10, 5, 5, 0.9);
+            border: 3px solid #ff0000;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: rgbGlow 4s infinite linear;
+        }
+
+        .hours-text {
+            font-size: 13px;
+            font-weight: 950;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
         /* Geri Sayım Kutusu */
@@ -260,6 +290,11 @@
     </div>
 
     <header>
+        <!-- RGB Neon Animasyonlu Çalışma Saatleri Şeridi -->
+        <div class="hours-banner">
+            <div class="hours-text">⏰ Satışlar Sadece 12:00 ve 19:00 Arası Yapılmaktadır ⏰</div>
+        </div>
+
         <!-- 48 Saatlik Geri Sayım Alanı -->
         <div class="countdown-container">
             <div class="countdown-title">⚡ Son Saatler ⚡</div>
@@ -303,14 +338,15 @@
         Davlumbuzz TV 🚀
     </footer>
 
-    <!-- Geri Sayım Mantığı -->
+    <!-- Gerçek Zamanlı Sürekli Akan Sayaç Mantığı -->
     <script>
-        // Sürenin ne zaman biteceğini hesapla (İlk açılışta 48 saat ekler ve tarayıcıda saklar)
-        let countDownTime = localStorage.getItem("davlumbuzz_endtime");
+        // Sayfa ilk yüklendiğinde global bir bitiş zamanı belirlenir ve tarayıcıda kalıcı olarak saklanır.
+        // Bu sayede süre asla sayfayı yenileyince sıfırlanmaz veya baştan sarmaz, sürekli azalmaya devam eder.
+        let countDownTime = localStorage.getItem("davlumbuzz_global_endtime");
         
         if (!countDownTime) {
-            countDownTime = new Date().getTime() + (48 * 60 * 60 * 1000); // 48 Saat
-            localStorage.setItem("davlumbuzz_endtime", countDownTime);
+            countDownTime = new Date().getTime() + (48 * 60 * 60 * 1000); // Tam 48 Saat
+            localStorage.setItem("davlumbuzz_global_endtime", countDownTime);
         }
 
         let x = setInterval(function() {
@@ -322,15 +358,12 @@
                 document.getElementById("timer").innerHTML = "SÜRE BİTTİ";
                 document.getElementById("main-content").innerHTML = "<div class='card' style='color:#ff416c; font-weight:900; font-size:20px;'>Bu Teklif Sona Ermiştir!</div>";
             } else {
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let hours = Math.floor(distance / (1000 * 60 * 60));
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Saatlerin 48 saati aşabilmesi veya genel gösterimi için:
-                let totalHours = Math.floor(distance / (1000 * 60 * 60));
-
                 document.getElementById("timer").innerHTML = 
-                    String(totalHours).padStart(2, '0') + ":" + 
+                    String(hours).padStart(2, '0') + ":" + 
                     String(minutes).padStart(2, '0') + ":" + 
                     String(seconds).padStart(2, '0');
             }
