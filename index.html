@@ -36,10 +36,57 @@
 
         /* RGB Neon Animasyonlu Çerçeveler */
         @keyframes rgbGlow {
-            0% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
-            33% { border-color: #00ff66; box-shadow: 0 0 15px rgba(0, 255, 102, 0.6); }
-            66% { border-color: #0088ff; box-shadow: 0 0 15px rgba(0, 136, 255, 0.6); }
-            100% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
+            0% { border-color: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+            33% { border-color: #00ff66; box-shadow: 0 0 20px rgba(0, 255, 102, 0.8); }
+            66% { border-color: #0088ff; box-shadow: 0 0 20px rgba(0, 136, 255, 0.8); }
+            100% { border-color: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+        }
+
+        /* Gönderim Yönteminin Tanıtımı Başlığı (RGB Neon) */
+        .intro-banner {
+            width: 100%;
+            background: rgba(10, 15, 12, 0.95);
+            border: 4px solid #ff0000;
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: rgbGlow 3s infinite linear;
+        }
+
+        .intro-title {
+            font-size: 16px;
+            font-weight: 950;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
+        }
+
+        /* Video Tanıtım Bilgi Kutusu */
+        .info-card {
+            background: rgba(13, 26, 18, 0.9);
+            border: 2px solid #00ff66;
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 5px 20px rgba(0, 255, 102, 0.2);
+        }
+
+        .info-card h3 {
+            color: #00ff66;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .info-card p {
+            font-size: 12px;
+            color: #d1d5db;
+            line-height: 1.5;
+            margin-bottom: 6px;
         }
 
         .hours-banner {
@@ -183,6 +230,20 @@
 <body>
 
     <header>
+        <!-- RGB Neon Gönderim Yönteminin Tanıtımı Başlığı -->
+        <div class="intro-banner">
+            <div class="intro-title">🚀 GÖNDERİM YÖNTEMİNİN TANITIMI 🚀</div>
+        </div>
+
+        <!-- Video Bilgilendirme Kartı -->
+        <div class="info-card">
+            <h3>Güvenli ve Hızlı Teslimat</h3>
+            <p>• İşlemleriniz EA Hesabı veya Facebook üzerinden tamamen güvenli şekilde yapılmaktadır.</p>
+            <p>• Hesap banlanma veya çalınma riski kesinlikle yoktur.</p>
+            <p>• Satın almak istediğiniz pakete tıkladıktan sonra WhatsApp üzerinden UID ve giriş bilgilerinizle iletişime geçebilirsiniz.</p>
+        </div>
+
+        <!-- Çalışma Saatleri Şeridi -->
         <div class="hours-banner">
             <div class="hours-text">⏰ Satışlar Sadece 12:00 ve 19:00 Arası Yapılmaktadır ⏰</div>
         </div>
