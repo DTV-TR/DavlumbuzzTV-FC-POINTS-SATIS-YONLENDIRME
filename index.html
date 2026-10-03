@@ -63,7 +63,7 @@
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
         }
 
-        /* Video Oynatıcı Kutusu */
+        /* Doğrudan Video Oynatıcı Kutusu */
         .video-container {
             width: 100%;
             background: rgba(13, 26, 18, 0.9);
@@ -78,20 +78,19 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Oranı */
-            height: 0;
             border-radius: 10px;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-wrapper video {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: auto;
+            max-height: 280px;
             border-radius: 10px;
+            outline: none;
         }
 
         .hours-banner {
@@ -240,11 +239,14 @@
             <div class="intro-title">🚀 GÖNDERİM YÖNTEMİNİN TANITIMI 🚀</div>
         </div>
 
-        <!-- YouTube Video Oynatıcı (Gönderdiğin kanalın tanıtım videosu) -->
+        <!-- Doğrudan Video Oynatıcı -->
         <div class="video-container">
             <div class="video-wrapper">
-                <!-- YouTube video ID'si otomatik eklendi -->
-                <iframe src="https://www.youtube.com/embed/QlrscG2tWZK" title="Davlumbuzz TV Tanıtım" allowfullscreen></iframe>
+                <!-- Videonun GitHub'daki adı video.mp4 olacak şekilde ayarlandı -->
+                <video controls autoplay muted loop playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
             </div>
         </div>
 
